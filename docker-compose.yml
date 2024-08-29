@@ -13,3 +13,12 @@ services:
     #  Any changes you make in your local machine will synchronize the changes in the
    # container
      - .:/app
+  tests:
+   build:
+    context: .
+    dockerfile: Dockerfile.dev
+   container_name: react-frontend-test
+   volumes:
+     - "/app/node_modules"
+     - .:/app
+   command : ["npm", "run", "test"]

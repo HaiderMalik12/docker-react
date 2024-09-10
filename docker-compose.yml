@@ -1,24 +1,8 @@
 version: '3'
-
 services:
-  web: 
-   build: 
-     context: .
-     dockerfile: Dockerfile.dev
-   container_name: react-frontend
-   ports:
-     - "3000:3000"
-   volumes:
-     - "/app/node_modules"
-    #  Any changes you make in your local machine will synchronize the changes in the
-   # container
-     - .:/app
-  tests:
-   build:
-    context: .
-    dockerfile: Dockerfile.dev
-   container_name: react-frontend-test
-   volumes:
-     - "/app/node_modules"
-     - .:/app
-   command : ["npm", "run", "test"]
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'

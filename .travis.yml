@@ -8,3 +8,15 @@ before_install:
 
 script: 
  - docker run -e CI=true haidermalik/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-north"
+  app: "frontend"
+  env: "Frontend-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-774305592250"
+  bucket_path: "frontend"
+  on:
+    branch: main
+  access_key_id : $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"

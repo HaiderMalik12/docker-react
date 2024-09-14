@@ -11,7 +11,7 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "eu-north"
+  region: "eu-north-1"
   app: "frontend"
   env: "Frontend-env"
   bucket_name: "elasticbeanstalk-eu-north-1-774305592250"
